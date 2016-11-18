@@ -7,14 +7,39 @@
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var mapView: MKMapView!
+    var radius = 1
+    var userLocation: CLLocation? = nil
+    
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var radiusSlider: UISlider!
+    @IBOutlet weak var radiusLabel: UILabel!
+
+    @IBAction func radiusChanged(_ sender: UISlider) {
+        
+        let intValue = Int(sender.value)
+        radiusLabel.text = "\(intValue) km"
+        radius = intValue
+        radiusSlider.value = Float(intValue)
+        
+        guard let loc = userLocation else {
+            print("userLocation not set.")
+            return
+        }
+        
+        if circleNeedsSetting {
+            mapView.clear()
+            let circ = GMSCircle(position: loc.coordinate, radius: Double(Double(radius) * 1000))
+            circ.map = mapView
+        }
+    }
+    
     
     let locationManager = CLLocationManager()
-    var circle = MKCircle()
     var initialRegionNeedsSetting = true
     var circleNeedsSetting = true
     
@@ -26,46 +51,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        mapView.showsUserLocation = true
-        self.mapView.delegate = self
-        
-        
-        let coordinate1 = CLLocation(latitude: 53.874798, longitude: 27.675941)
-        let coordinate2 = CLLocation(latitude:  32.089471, longitude: 34.784712)
-        let distanceInMeters = coordinate1.distance(from: coordinate2) / 1000
-        print("Minsk telaviv: \(distanceInMeters) km")
-        
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
         
     }
     
-    
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        if initialRegionNeedsSetting  {
-            initialRegionNeedsSetting = false
-            let latDetla: CLLocationDegrees = 0.1
-            let lonDelta: CLLocationDegrees = 0.1
-            let span = MKCoordinateSpan(latitudeDelta: latDetla, longitudeDelta: lonDelta)
-            let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: span)
-            mapView.setRegion(region, animated: false)
-        }
-    }
-    
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            let circle = MKCircleRenderer(overlay: overlay)
-            circle.strokeColor = UIColor.red
-            circle.lineWidth = 1
-            return circle
-    }
-
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            if circleNeedsSetting {
-                circleNeedsSetting = false
-                mapView.delegate = self
-                circle = MKCircle(center: location.coordinate, radius: 2485685 as CLLocationDistance)
-                mapView.add(circle)
+            if initialRegionNeedsSetting {
+                initialRegionNeedsSetting = false
+                let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 11)
+                mapView.camera = camera
             }
+            userLocation = location
         }
     }
 

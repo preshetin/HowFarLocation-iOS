@@ -12,9 +12,11 @@
 		2E32A36F1DDD8EF100E67B9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E32A36D1DDD8EF100E67B9B /* Main.storyboard */; };
 		2E32A3711DDD8EF100E67B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E32A3701DDD8EF100E67B9B /* Assets.xcassets */; };
 		2E32A3741DDD8EF100E67B9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E32A3721DDD8EF100E67B9B /* LaunchScreen.storyboard */; };
+		5E16A4C913259D43849350F0 /* libPods-HowFarLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FB5F977DCAFC1FA1080F9D /* libPods-HowFarLocation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		224BB29F03AE9748308718AC /* Pods-HowFarLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowFarLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-HowFarLocation/Pods-HowFarLocation.release.xcconfig"; sourceTree = "<group>"; };
 		2E32A3661DDD8EF100E67B9B /* HowFarLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowFarLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E32A3691DDD8EF100E67B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E32A36B1DDD8EF100E67B9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		2E32A3701DDD8EF100E67B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E32A3731DDD8EF100E67B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E32A3751DDD8EF100E67B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF4C115613EDB2E897437CE4 /* Pods-HowFarLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowFarLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HowFarLocation/Pods-HowFarLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		F5FB5F977DCAFC1FA1080F9D /* libPods-HowFarLocation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HowFarLocation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E16A4C913259D43849350F0 /* libPods-HowFarLocation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				2E32A3681DDD8EF100E67B9B /* HowFarLocation */,
 				2E32A3671DDD8EF100E67B9B /* Products */,
+				55AAE18F30A408A1131FCFC4 /* Pods */,
+				E58758719C4C65B8716831C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = HowFarLocation;
 			sourceTree = "<group>";
 		};
+		55AAE18F30A408A1131FCFC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF4C115613EDB2E897437CE4 /* Pods-HowFarLocation.debug.xcconfig */,
+				224BB29F03AE9748308718AC /* Pods-HowFarLocation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E58758719C4C65B8716831C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5FB5F977DCAFC1FA1080F9D /* libPods-HowFarLocation.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E32A3781DDD8EF100E67B9B /* Build configuration list for PBXNativeTarget "HowFarLocation" */;
 			buildPhases = (
+				5317E08B74A77C550089F613 /* [CP] Check Pods Manifest.lock */,
 				2E32A3621DDD8EF100E67B9B /* Sources */,
 				2E32A3631DDD8EF100E67B9B /* Frameworks */,
 				2E32A3641DDD8EF100E67B9B /* Resources */,
+				2C0B04C4842617E5639193C0 /* [CP] Embed Pods Frameworks */,
+				200036A9C1AC3E766F014B13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		200036A9C1AC3E766F014B13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HowFarLocation/Pods-HowFarLocation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C0B04C4842617E5639193C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HowFarLocation/Pods-HowFarLocation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5317E08B74A77C550089F613 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E32A3621DDD8EF100E67B9B /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		2E32A3791DDD8EF100E67B9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF4C115613EDB2E897437CE4 /* Pods-HowFarLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FVTU3U5H6P;
@@ -270,6 +346,7 @@
 		};
 		2E32A37A1DDD8EF100E67B9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 224BB29F03AE9748308718AC /* Pods-HowFarLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FVTU3U5H6P;
@@ -300,6 +377,7 @@
 				2E32A37A1DDD8EF100E67B9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
