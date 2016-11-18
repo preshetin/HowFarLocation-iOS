@@ -11,7 +11,7 @@ import GoogleMaps
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    var radius = 1
+    var radius = 5
     var userLocation: CLLocation? = nil
     
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
+        mapView.settings.compassButton = true
         mapView.isMyLocationEnabled = true
     }
     
