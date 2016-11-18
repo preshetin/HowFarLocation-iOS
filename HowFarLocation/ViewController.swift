@@ -16,15 +16,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var radiusLabel: UILabel!
 
-    @IBAction func radiusChanged(_ sender: UISlider) {
-        
+    @IBAction func stepperChanged(_ sender: UIStepper) {
         let intValue = Int(sender.value)
         radiusLabel.text = "\(intValue) km"
         radius = intValue
-        radiusSlider.value = Float(intValue)
         
         guard let loc = userLocation else {
             print("userLocation not set.")
@@ -37,7 +34,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             circ.map = mapView
         }
     }
-    
     
     let locationManager = CLLocationManager()
     var initialRegionNeedsSetting = true

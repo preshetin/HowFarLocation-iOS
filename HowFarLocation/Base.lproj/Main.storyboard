@@ -22,24 +22,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-eK-rbE" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="588.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-zF-POC">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-zF-POC">
+                                <rect key="frame" x="16" y="608.5" width="343" height="38.5"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="X8W-c3-Vv8">
-                                        <rect key="frame" x="-2" y="0.0" width="172" height="31"/>
-                                        <connections>
-                                            <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="99s-o8-eKr"/>
-                                        </connections>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOB-OR-VCi">
-                                        <rect key="frame" x="176" y="5" width="167" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oWe-v2-yEj">
+                                        <rect key="frame" x="249" y="5" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pVm-0B-pR9"/>
+                                        </connections>
+                                    </stepper>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -57,7 +57,6 @@
                     <connections>
                         <outlet property="mapView" destination="J1h-eK-rbE" id="qw7-xI-hmx"/>
                         <outlet property="radiusLabel" destination="hOB-OR-VCi" id="ncK-IX-3oU"/>
-                        <outlet property="radiusSlider" destination="X8W-c3-Vv8" id="ti4-3u-5cD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
