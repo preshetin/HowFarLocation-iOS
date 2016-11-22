@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1A6DF01DE43F340014D26F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1A6DEF1DE43F340014D26F /* logo.png */; };
 		2E32A36A1DDD8EF100E67B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32A3691DDD8EF100E67B9B /* AppDelegate.swift */; };
 		2E32A36C1DDD8EF100E67B9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32A36B1DDD8EF100E67B9B /* ViewController.swift */; };
 		2E32A36F1DDD8EF100E67B9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E32A36D1DDD8EF100E67B9B /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		224BB29F03AE9748308718AC /* Pods-HowFarLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowFarLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-HowFarLocation/Pods-HowFarLocation.release.xcconfig"; sourceTree = "<group>"; };
+		2E1A6DEF1DE43F340014D26F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2E32A3661DDD8EF100E67B9B /* HowFarLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowFarLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E32A3691DDD8EF100E67B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E32A36B1DDD8EF100E67B9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				2E32A36B1DDD8EF100E67B9B /* ViewController.swift */,
 				2E32A36D1DDD8EF100E67B9B /* Main.storyboard */,
 				2E32A3701DDD8EF100E67B9B /* Assets.xcassets */,
+				2E1A6DEF1DE43F340014D26F /* logo.png */,
 				2E32A3721DDD8EF100E67B9B /* LaunchScreen.storyboard */,
 				2E32A3751DDD8EF100E67B9B /* Info.plist */,
 			);
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1A6DF01DE43F340014D26F /* logo.png in Resources */,
 				2E32A3741DDD8EF100E67B9B /* LaunchScreen.storyboard in Resources */,
 				2E32A3711DDD8EF100E67B9B /* Assets.xcassets in Resources */,
 				2E32A36F1DDD8EF100E67B9B /* Main.storyboard in Resources */,
